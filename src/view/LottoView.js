@@ -13,7 +13,7 @@ export default class LottoView {
     }
 
     showWinningStatus(matchLottoCount) {
-        Console.print("당첨 통계 \n---");
+        Console.print("\n당첨 통계 \n---");
         Console.print(`${MATCH_MESSAGES.THREE_MATCH} - ${matchLottoCount.three}개`);
         Console.print(`${MATCH_MESSAGES.FOUR_MATCH} - ${matchLottoCount.four}개`);
         Console.print(`${MATCH_MESSAGES.FIVE_MATCH} - ${matchLottoCount.five}개`);

@@ -97,7 +97,7 @@ class Lotto {
   }
   
   calculateTotalPrizeRate(matchLottoCount, price) {
-    const totalPrizeRate = Math.round((this.#calculateTotalPrize(matchLottoCount) / price) * 100) / 100;
+    const totalPrizeRate = Math.round(((this.#calculateTotalPrize(matchLottoCount) / price) * 100) * 100) / 100;
     return totalPrizeRate;
   }
 }
