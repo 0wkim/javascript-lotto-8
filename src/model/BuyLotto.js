@@ -13,22 +13,22 @@ export default class BuyLotto {
         return this.#numberOfLotto;
     }
 
-    getLotto() {
-        const numbersList = [];
+    getLotto(numberOfLotto) {
+        const lottos = [];
 
-        for (let i = 0; i < 6; i++) {
-            const randomNumber = Random.pickUniqueNumbersInRange(1, 45, 6);
-            numbersList.push(randomNumber);
+        for (let i = 0; i < numberOfLotto; i++) {
+            const lotto = Random.pickUniqueNumbersInRange(1, 45, 6);
+            lottos.push(lotto);
         }
 
-        return numbersList;
+        return lottos;
     }
 
     // iterateByLottoCount(numberOfLotto) {
     //     const lottos = [];
 
     //     for (let i = 0; i < numberOfLotto; i++) {
-    //         lottos.push(getRandomNumbers());
+    //         lottos.push(this.getLotto());
     //     }
 
     //     return lottos;
