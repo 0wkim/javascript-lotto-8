@@ -18,7 +18,8 @@ export default class BuyLotto {
 
         for (let i = 0; i < numberOfLotto; i++) {
             const lotto = Random.pickUniqueNumbersInRange(1, 45, 6);
-            lottos.push(lotto);
+            const sortedLotto = lotto.sort((a, b) => a - b);
+            lottos.push(sortedLotto);
         }
 
         return lottos;
