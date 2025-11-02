@@ -26,15 +26,18 @@ export default class LottoController {
         this.view.showLottoCount(this.numberOfLotto);
         this.view.showLottoList(this.lottos);
 
-        const buyerLottoNumbers = await Console.readLineAsync("당첨 번호를 입력해 주세요. \n");
-        const bonusNumber = await Console.readLineAsync("보너스 번호를 입력해 주세요. \n");
+        const buyerLottoNumbers = await Console.readLineAsync("\n당첨 번호를 입력해 주세요. \n");
+        const bonusNumber = await Console.readLineAsync("\n보너스 번호를 입력해 주세요. \n");
 
         const buyerLottoNumbersList = parseNumbers(buyerLottoNumbers);
         const matchChecking = new Lotto(buyerLottoNumbersList);
         this.matchCountList = matchChecking.getMatchCountList(this.lottos);
         this.matchLottoCount = matchChecking.getMatchLottoCount(this.matchCountList, this.lottos, bonusNumber);
 
+        // 추후 view로 이동
         Console.print(JSON.stringify(this.matchLottoCount));
+
+        
         // const 
 
         // const lottoNumbers = Console.readLineAsync("당첨 번호를 입력해 주세요. \n");
