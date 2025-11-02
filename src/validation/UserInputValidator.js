@@ -8,8 +8,8 @@ export default class ValidateUserInput {
             throw new Error("[ERROR] 올바른 금액이 아닙니다. 천원 단위의 금액으로 다시 입력해주세요.");
         }
 
-        if (price === 0) {
-            throw new Error("[ERROR] 로또를 구입할 수 없습니다. 다시 입력해주세요.");
+        if (price === "" || price === undefined || price === null || price === 0) {
+            throw new Error("[ERROR] 금액이 입력되지 않았습니다.");
         }
 
         return price;
@@ -34,7 +34,7 @@ export default class ValidateUserInput {
 
     checkBonusNumberInput(number, numbers) {
         if (isNaN(number) || number < 1 || number > 45) {
-            throw new Error("[ERROR] 보너스 번호는 1에서 45 사이의 숫자여야 합니다. 다시 입력해주세요.");
+            throw new Error("[ERROR] 보너스 번호는 1에서 45사이의 숫자여야 합니다. 다시 입력해주세요.");
         }
 
         if (numbers.includes(number)) {
