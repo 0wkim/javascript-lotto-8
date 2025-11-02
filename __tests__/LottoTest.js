@@ -55,12 +55,11 @@ describe("로또 클래스 테스트", () => {
     expect(lottos[1]).toEqual([1, 3, 6, 9, 27, 43]);
   });
 
-
   test("당첨 번호와 로또 번호가 일치하면, 일치 개수가 증가하는지 확인", () => {
     const lottos = [
-      [1, 2, 3, 10, 11, 12],
-      [1, 2, 3, 4, 5, 6],
-      [1, 2, 3, 4, 5, 7]
+      [1, 2, 3, 10, 11, 12], // 3개 일치
+      [1, 2, 3, 4, 5, 6], // 6개 일치
+      [1, 2, 3, 4, 5, 7] // 5개 일치
     ];
     const matchChecking = new Lotto([1, 2, 3, 4, 5, 6]);
     const matchCountList = matchChecking.getMatchCountList(lottos);
@@ -90,7 +89,7 @@ describe("로또 클래스 테스트", () => {
   test("수익률 계산이 정확한지 확인", () => {
     const matchChecking = new Lotto([1, 2, 3, 4, 5, 6]);
     const matchLottoCount = {
-      three: 1,
+      three: 1, // 일치 개수가 3개이므로, 5000원
       four: 0,
       five: 0,
       fiveBonus: 0,

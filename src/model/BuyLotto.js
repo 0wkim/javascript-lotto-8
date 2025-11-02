@@ -1,13 +1,6 @@
 import { Random } from "@woowacourse/mission-utils";
 
 export default class BuyLotto {
-    // #price;
-    // numberOfLotto;
-
-    // constructor() {
-    //     this.#price = price;
-    // }
-
     getNumberOfLotto(price) {
         const numberOfLotto = price / 1000;
         return numberOfLotto;

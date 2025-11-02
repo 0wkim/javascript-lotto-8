@@ -40,5 +40,4 @@ describe("예외 처리 테스트", () => {
         expect(() => validator.checkBonusNumberInput(0, [1, 2, 3, 4, 5, 6])).toThrow("[ERROR]");
         expect(() => validator.checkBonusNumberInput(46, [1, 2, 3, 4, 5, 6])).toThrow("[ERROR]");
     });
-
 });

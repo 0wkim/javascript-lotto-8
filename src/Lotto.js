@@ -20,6 +20,7 @@ class Lotto {
   }
 
   // TODO: 추가 기능 구현
+  // 로또 번호와 당첨 번호 일치 개수 저장
   #getMatchNumberCount(lotto, matchCountList) {
     let matchNumberCount = 0;
 
@@ -32,6 +33,7 @@ class Lotto {
     matchCountList.push(matchNumberCount);
   }
 
+  // 로또 발행 개수만큼 getMatchNumberCount 반복
   getMatchCountList(lottos) {
     const matchCountList = [];
 
@@ -42,6 +44,7 @@ class Lotto {
     return matchCountList;
   }
 
+  // 일치 개수를 당첨 통계 객체로 변환
   getMatchLottoCount(matchCountList, lottos, number) {
     const matchLottoCount = {
       three: 0,
@@ -57,6 +60,7 @@ class Lotto {
     return matchLottoCount;
   }
 
+  // 매치 결과 카운트
   #countMatchResults(matchCountList, matchLottoCount) {
     matchCountList.forEach((matchCount) => {
       if (matchCount === 3) {
@@ -74,15 +78,17 @@ class Lotto {
     });
   }
 
+  // 보너스 볼 일치 여부 확인
   #isBonusNumberMatch(matchCountList, matchLottoCount, lottos, bonusNumber) {
     matchCountList.forEach((matchCount, index) => {
       if (matchCount === 5 && lottos[index].includes(Number(bonusNumber))) {
         matchLottoCount.fiveBonus++;
         matchLottoCount.five--;
       }
-    })
+    });
   }
 
+  // 상금 계산
   #calculateTotalPrize(matchLottoCount) {
     const prizeMapping = {
       three: PRIZE.FIFTH_PLACE,
@@ -100,6 +106,7 @@ class Lotto {
     return totalIncome;
   }
   
+  // 총 수익률 계산
   calculateTotalPrizeRate(matchLottoCount, price) {
     const totalPrizeRate = Math.round(((this.#calculateTotalPrize(matchLottoCount) / price) * 100) * 100) / 100;
     return totalPrizeRate;
