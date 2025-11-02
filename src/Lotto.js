@@ -20,7 +20,6 @@ class Lotto {
   }
 
   // TODO: 추가 기능 구현
-
   #getMatchNumberCount(lotto, matchCountList) {
     let matchNumberCount = 0;
 

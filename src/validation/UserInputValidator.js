@@ -16,8 +16,12 @@ export default class ValidateUserInput {
     }
 
     checkNumberInput(numbers) {
-        if (numbers.some(num => isNaN(num) || num < 1 || num > 45 || !Number.isInteger(num))) {
+        if (numbers.some(num => isNaN(num) || num < 1 || num > 45 || !Number.isInteger(num)) || numbers.length !== 6) {
             throw new Error("[ERROR] 당첨 번호는 1에서 45 사이의 숫자 6개여야 합니다. 다시 입력해주세요.");
+        }
+
+        if (numbers.length !== 6) {
+            throw new Error("[ERROR] 로또 번호는 6개여야 합니다.");
         }
 
         const isDuplicated = new Set(numbers);
@@ -30,7 +34,7 @@ export default class ValidateUserInput {
 
     checkBonusNumberInput(number, numbers) {
         if (isNaN(number) || number < 1 || number > 45) {
-            throw new Error("[ERROR] 보너스 번호는 1에서 45 사이의 숫자 6개여야 합니다. 다시 입력해주세요.");
+            throw new Error("[ERROR] 보너스 번호는 1에서 45 사이의 숫자여야 합니다. 다시 입력해주세요.");
         }
 
         if (numbers.includes(number)) {
