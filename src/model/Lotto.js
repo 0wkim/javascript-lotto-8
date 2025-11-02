@@ -1,8 +1,4 @@
-import { Console } from "@woowacourse/mission-utils";
-
-import { PRIZE } from "../constants/Prize";
-// import { Bonus } from "./Bonus.js";
-// import { BuyLotto } from "./BuyLotto.js";
+import { PRIZE } from "../constants/Prize.js";
 
 class Lotto {
   #numbers;

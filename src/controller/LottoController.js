@@ -1,5 +1,4 @@
 import { Console } from "@woowacourse/mission-utils";
-
 import BuyLotto from "../model/BuyLotto.js";
 import Lotto from "../model/Lotto.js";
 import LottoView from "../view/LottoView.js";
@@ -37,16 +36,7 @@ export default class LottoController {
         // 추후 view로 이동
         Console.print(JSON.stringify(this.matchLottoCount));
 
-        
-        // const 
-
-        // const lottoNumbers = Console.readLineAsync("당첨 번호를 입력해 주세요. \n");
-        // new Lotto(lottoNumbers);
-
-        // const bonusNumber = Console.readLineAsync("보너스 번호를 입력 해주세요. \n");
-        // new Bonus(bonusNumber);
-
-        
-
+        this.view.showWinningStatus(this.matchLottoCount);
+        this.view.showTotalReturnRate(matchChecking.calculateTotalPrizeRate(this.matchLottoCount, price));
     }
 }
