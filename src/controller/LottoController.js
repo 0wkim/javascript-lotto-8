@@ -1,7 +1,7 @@
 import { Console } from "@woowacourse/mission-utils";
 import ValidateUserInput from "../validation/UserInputValidator.js";
 import BuyLotto from "../model/BuyLotto.js";
-import Lotto from "../model/Lotto.js";
+import Lotto from "../Lotto.js";
 import LottoView from "../view/LottoView.js";
 import { parseNumbers } from "../utils/numberParser.js";
 
